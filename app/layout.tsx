@@ -18,18 +18,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={cn(
-          GeistSans.variable,
-          GeistMono.variable,
-          "flex flex-col min-h-screen"
-        )}
-      >
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={cn(GeistSans.variable, GeistMono.variable)}
+    >
+      <body className={cn("flex flex-col min-h-screen")}>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
           enableSystem
+          enableColorScheme={false}
           disableTransitionOnChange
         >
           <Nav />

@@ -11,7 +11,7 @@ export default function StartCall({ configId, accessToken }: { configId?: string
     <AnimatePresence>
       {status.value !== "connected" ? (
         <motion.div
-          className={"fixed inset-0 p-4 flex items-center justify-center bg-background"}
+          className={"z-100 fixed inset-0 p-4 flex items-center justify-center"}
           initial="initial"
           animate="enter"
           exit="exit"
@@ -30,7 +30,7 @@ export default function StartCall({ configId, accessToken }: { configId?: string
               }}
             >
               <Button
-                className={"z-50 flex items-center gap-1.5 rounded-full"}
+                className={"z-100 flex hover:bg-green-700 cursor-pointer items-center gap-1.5 rounded-full"}
                 onClick={() => {
                   connect({ 
                     auth: { type: "accessToken", value: accessToken },
