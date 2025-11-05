@@ -13,14 +13,9 @@ export default async function Page() {
   }
 
   return (
- 
-  <div className={"grow flex flex-col relative"}>
-  
+    <div className={"grow flex flex-col relative overflow-hidden"}>
       <Chat accessToken={accessToken} />
-      <img className="absolute bottom-0 -left-25 z-50" src="/girl.png" alt="Mello Logo" width={750} height={750} />
+      <img className="absolute -bottom-10 -left-25 z-50" src="/girl.png" alt="Mello Logo" width={750} height={750} />
     </div>
-
-
-
   );
 }

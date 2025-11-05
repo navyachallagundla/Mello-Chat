@@ -6,6 +6,7 @@ import { Nav } from "@/components/Nav";
 import { cn } from "@/utils";
 import { Toaster } from "@/components/ui/sonner";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { AuthProvider } from "@/contexts/AuthContext";
 
 export const metadata: Metadata = {
   title: "Mello Chat",
@@ -31,9 +32,11 @@ export default function RootLayout({
           enableColorScheme={false}
           disableTransitionOnChange
         >
-          <Nav />
-          {children}
-          <Toaster position="top-center" richColors={true} />
+          <AuthProvider>
+            <Nav />
+            {children}
+            <Toaster position="top-center" richColors={true} />
+          </AuthProvider>
         </ThemeProvider>
       </body>
     </html>
