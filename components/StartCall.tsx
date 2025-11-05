@@ -42,7 +42,7 @@ export default function StartCall({ configId, accessToken }: { configId?: string
               }}
             >
               <Button
-                className={"z-100 flex p-8 hover:bg-blue-600 font-bold text-xl transition-all delay-150 duration-900 ease-in-out cursor-pointer items-center gap-1.5 rounded-full"}
+                className={"z-100 flex p-8 hover:bg-blue-600 font-bold text-xl transition-all duration-900 ease-in-out cursor-pointer items-center gap-1.5 rounded-full"}
                 onClick={() => {
                   connect({ 
                     auth: { type: "accessToken", value: accessToken },
@@ -55,8 +55,7 @@ export default function StartCall({ configId, accessToken }: { configId?: string
                     .finally(() => {});
                 }}
               >
-                <span>
-                  <Music2/>
+                <span className="animate-bounce">
                   <Music2/>
                 </span>
                 <span>Talk to Mello</span>
