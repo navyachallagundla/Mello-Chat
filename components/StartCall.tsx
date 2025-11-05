@@ -1,7 +1,7 @@
 import { useVoice } from "@humeai/voice-react";
 import { AnimatePresence, motion } from "motion/react";
 import { Button } from "./ui/button";
-import { Phone } from "lucide-react";
+import { Music2, Phone } from "lucide-react";
 import { toast } from "sonner";
 
 export default function StartCall({ configId, accessToken }: { configId?: string, accessToken: string }) {
@@ -31,7 +31,7 @@ export default function StartCall({ configId, accessToken }: { configId?: string
 
      <div className="flex flex-col gap-8 items-center">
 <motion.div className="items-center flex justify-center -z-50">
- <p className="w-150 text-center text-6xl font-extralight bg-orange-300 rounded-4xl py-8"> MelloChat: Empathic Voice Chat</p>
+ <p className="w-150 text-center text-6xl font-normal bg-orange-400 rounded-4xl py-8"> MelloChat: Empathic Voice Chat</p>
 </motion.div>
      <AnimatePresence>
             <motion.div
@@ -42,7 +42,7 @@ export default function StartCall({ configId, accessToken }: { configId?: string
               }}
             >
               <Button
-                className={"z-100 flex hover:bg-green-700 cursor-pointer items-center gap-1.5 rounded-full"}
+                className={"z-100 flex p-8 hover:bg-blue-600 font-bold text-xl transition-all delay-150 duration-900 ease-in-out cursor-pointer items-center gap-1.5 rounded-full"}
                 onClick={() => {
                   connect({ 
                     auth: { type: "accessToken", value: accessToken },
@@ -56,12 +56,10 @@ export default function StartCall({ configId, accessToken }: { configId?: string
                 }}
               >
                 <span>
-                  <Phone
-                    className={"size-4 opacity-50 fill-current"}
-                    strokeWidth={0}
-                  />
+                  <Music2/>
+                  <Music2/>
                 </span>
-                <span>Start Chat</span>
+                <span>Talk to Mello</span>
               </Button>
             </motion.div>
           </AnimatePresence>
