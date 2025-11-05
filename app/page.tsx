@@ -17,7 +17,7 @@ export default async function Page() {
   <div className={"grow flex flex-col relative"}>
   
       <Chat accessToken={accessToken} />
-      <img className="absolute bottom-0 -left-25 z-10" src="/girl.png" alt="Mello Logo" width={750} height={750} />
+      <img className="absolute bottom-0 -left-25 z-50" src="/girl.png" alt="Mello Logo" width={750} height={750} />
     </div>
 
 

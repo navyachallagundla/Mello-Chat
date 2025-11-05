@@ -10,6 +10,8 @@ export default function StartCall({ configId, accessToken }: { configId?: string
   return (
     <AnimatePresence>
       {status.value !== "connected" ? (
+
+
         <motion.div
           className={"z-100 fixed inset-0 p-4 flex items-center justify-center"}
           initial="initial"
@@ -21,7 +23,17 @@ export default function StartCall({ configId, accessToken }: { configId?: string
             exit: { opacity: 0 },
           }}
         >
-          <AnimatePresence>
+
+
+
+
+
+
+     <div className="flex flex-col gap-8 items-center">
+<motion.div className="items-center flex justify-center -z-50">
+ <p className="w-150 text-center text-6xl font-extralight bg-orange-300 rounded-4xl py-8"> MelloChat: Empathic Voice Chat</p>
+</motion.div>
+     <AnimatePresence>
             <motion.div
               variants={{
                 initial: { scale: 0.5 },
@@ -35,8 +47,6 @@ export default function StartCall({ configId, accessToken }: { configId?: string
                   connect({ 
                     auth: { type: "accessToken", value: accessToken },
                     configId, 
-                    // additional options can be added here
-                    // like resumedChatGroupId and sessionSettings
                   })
                     .then(() => {})
                     .catch(() => {
@@ -55,6 +65,11 @@ export default function StartCall({ configId, accessToken }: { configId?: string
               </Button>
             </motion.div>
           </AnimatePresence>
+<p>
+Making voice AI simple
+and accessible.
+</p>
+     </div>
         </motion.div>
       ) : null}
     </AnimatePresence>
